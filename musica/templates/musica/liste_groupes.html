@@ -1,0 +1,50 @@
+{% extends "squelette.html" %}
+{% load static %}
+{% block h2 %}Grops de musica{% endblock %}
+{% block filtres %}
+
+<div class="filtres">
+  <img src="{% static 'imatges/icones/parametres.png' %}" alt="Filtrar los resultats" title="Filtrar los resultats" class="iconerechch">
+  <div class="contenu_filtres">
+	<form action="" method="get">
+
+    {% csrf_token %}
+
+    {{ filtreform.as_p }}
+
+    <input type="submit" value="Submit" />
+
+</form>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block contenu %}
+	{% for groupe in groupe_list %}
+		<div class="cadreresult">
+		  {% if groupe.bal %}<img src="{% static 'imatges/icones/danse.png' %}" class="iconedanse" alt="Fa de musica a dançar" title="Fa de musica a dançar">{% endif %}<img src="{{ groupe.image.url }}" class="imageresult" alt="{{ groupe.nom }}">
+		  <h4>{{ groupe.nom }}</h4>
+		  <p class="subt">{% for style in groupe.styles.all %}{{ style }}{% if not forloop.last %}, {% endif %}{% endfor %} - {% for lieu in groupe.lieux.all %}{{ lieu.content_object }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+		  {% if groupe.present != "" %}<p>{{ groupe.present }}</p>{% endif %}
+		  
+			<div class="iconesresult">{% if groupe.musiciens_groupe.all %}<a href="" alt="Musicians de {{ groupe.nom }}" title="Musicians de {{ groupe.nom }}"><img src="{% static 'imatges/icones/musicien.png' %}" class="iconeresult"></a>{% endif %}
+			{% if groupe.disques_groupe.all %}<a href="" alt="Produccions de {{ groupe.nom }}" title="Produccions de {{ groupe.nom }}"><img src="{% static 'imatges/icones/disque.png' %}" class="iconeresult"></a>{% endif %}
+			{% if groupe.chansons_groupe.all %}<a href="" alt="Cançons de {{ groupe.nom }}" title="Cançons de {{ groupe.nom }}"><img src="{% static 'imatges/icones/chanson.png' %}" class="iconeresult"></a>{% endif %}
+			{% if groupe.site %}<a href="{{ groupe.site }}" alt="Site de {{ groupe.nom }}" title="Site de {{ groupe.nom }}"><img src="{% static 'imatges/icones/web.png' %}" class="iconeresult"></a>{% endif %}
+			{% if groupe.mail != "" and groupe.mailvisible %}<a href="mailto:{{ groupe.mail }}" alt="Escriure un corric a {{ groupe.nom }}" title="Escriure un corric a {{ groupe.nom }}"><img src="{% static 'imatges/icones/mail.png' %}" class="iconeresult"></a>{% endif %}
+			{% if groupe.telefone != "" and groupe.telvisible %}<a href="tel:{{ groupe.telefone }}" alt="Telefonar a {{ groupe.nom }}" title="Telefonar a {{ groupe.nom }}">><img src="{% static 'imatges/icones/phone.png' %}" class="iconeresult"></a>{% endif %}
+			
+			{% for reseau in groupe.reseaux.all %}<a href="{{ reseau.url }}" alt="{{ reseau.reseau.nom }} de {{ groupe.nom }}" title="{{ reseau.reseau.nom }} de {{ groupe.nom }}"><img src="{{ reseau.reseau.image.url }}" alt="{{ reseau.reseau.nom }}" class="iconeresult"></a> {% endfor %}
+			
+			
+			</div>
+			
+		
+		
+		  <div style="clear:both;"></div>
+		</div>
+	
+	{% endfor %}
+
+{% endblock %}

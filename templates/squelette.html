@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+   <title>{% block title %}Paraulas en Òc{% endblock %}</title>
+</head>
+<body>
+	{% block filtres %}
+  {% endblock %}
+<div class="haut">
+<img src="{% static 'imatges/logo.png' %}" class="logo">
+<div class="menu">
+  <div class="item"><a href=""><img src="{% static 'imatges/icones/groupe.png' %}" class="pucemenu"><br />Grops</a></div>
+  <div class="item"><a href=""><img src="{% static 'imatges/icones/musicien.png' %}" class="pucemenu"><br />Musicians</a></div>
+  <div class="item"><a href=""><img src="{% static 'imatges/icones/disque.png' %}" class="pucemenu"><br />Disques</a></div>
+  <div class="item"><a href=""><img src="{% static 'imatges/icones/chanson.png' %}" class="pucemenu"><br />Cançons</a></div>
+  <div class="item"><a href=""><img src="{% static 'imatges/icones/galerie.png' %}" class="pucemenu"><br />Galariá</a></div>
+</div>
+
+<div style="clear:both;"></div>
+</div>
+
+
+
+
+<div class="page">
+
+	<div class="content">
+	<h2>{% block h2 %}{% endblock %}</h2>
+
+	
+	{% block contenu %}
+  {% endblock %}
+	</div>
+	<div class="barregauche">
+		Contenu
+	
+	</div>
+</div>
+
+
+</body>
+</html>

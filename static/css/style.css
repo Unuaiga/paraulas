@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+	background:#1d1d1d;
+	color:#c5c5c5;
+	font-family:Arial;
+}
+
+img {
+	max-width:100%;
+}
+
+.haut {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.menu {
+	float:right;
+	padding:0;
+	width:70%;
+	display:flex;
+	justify-content:space-between;
+	padding-top:2em;
+}
+
+.item {
+	padding:0.5em;
+	text-align:center;
+}
+
+.item a {
+	color:#c5c5c5;
+	text-decoration:none;
+	
+}
+
+.item:hover a {
+	color:#71C043;
+}
+
+.pucemenu, .iconeresult {
+	vertical-align:middle;
+	background:#71C043;
+	padding:0.2em;
+	border-radius:5px;
+	border:1px solid #437328;
+}
+
+.pucemenu {
+	width:1.5em;
+}
+
+.iconeresult {
+	width:1.5em;
+}
+
+.iconedanse {
+	width:1.2em;
+	vertical-align:middle;
+	float:right;
+}
+
+.item:hover .pucemenu {
+	background:#000;
+	border:1px solid #000;
+}
+
+
+.logo {
+	float:left;
+	max-width:25%;
+}
+
+
+.filtres {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	box-sizing:border-box;
+	background:#000;
+	width:3vw;
+	width:20em;
+	padding:0.5em;
+}
+
+.iconerechch {
+	max-width:1.5vw;
+}
+
+.filtres .contenu_filtres {
+	visibility:hidden;
+	visibility:visible;
+}
+
+.filtres:hover {
+	width:20em;
+  transition-property: width;
+  transition-duration: 1s;
+}
+
+.filtres:hover .contenu_filtres {
+	visibility:visible;
+  transition-property: visibility;
+  transition-delay: 0.5s;
+}
+
+
+
+
+.page {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:1em;
+}
+
+h2 {
+	background:#71C043;
+	text-align:center;
+	color:#000;
+	border-radius:5px;
+	border:3px solid #437328;
+	margin-top:0;
+	padding:0.3em;
+}
+
+.page {
+	display:flex;
+	justify-content:space-between;
+	align-items:stretch;
+}
+
+
+.barregauche {
+	background:#000;
+	box-sizing:border-box;
+	width:25%;
+	border-radius:5px;
+	padding:0.5em;
+
+}
+
+.content {
+	box-sizing:border-box;
+	width:72%;
+}
+
+.cadreresult {
+	background:#000;
+	border-radius:5px;
+	padding:0.5em;
+	margin-bottom:1em;
+	
+}
+
+.imageresult {
+	max-width:35%;
+	float:left;
+	margin-right:0.5em;
+}
+
+.cadreresult h4 {
+	margin-top:0;
+	color:#71C043;
+	font-size:1.3em;
+	margin-bottom:0.5em;
+}
+
+.cadreresult .subt {
+	font-weight:bold;
+}
+
+.boutonvert {
+	background:#71C043;
+	text-align:center;
+	color:#000;
+	border-radius:5px;
+	border:1px solid #437328;
+	margin-top:0;
+	padding:0.3em;
+	text-decoration:none;
+}
+
+.iconesresult {
+	float:right;
+}
